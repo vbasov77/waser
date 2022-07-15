@@ -1,9 +1,9 @@
-# Бронирование времени мойки автомобиля.
+# Booking a car wash time.
 
-На данный момент это последнее моё приложение на Laravel, которое до сих пор находится в разработке.
+At the moment, this is my last application on Laravel, which is still in development.
 
-Приложение уже готово и используется пользователями, со своей стороны - ежедневное сопровождение сайта, анализ, улучшение функционала.
+The application is already ready and is used by users, for their part - daily maintenance of the site, analysis, improvement of functionality.
 
-Скорее, это самое сложное моё приложение в котором реализована более ёмкая логика, гибкие настройки приложения из админ панели и обширный функционал.
+Rather, this is my most complex application, which implements more capacious logic, flexible application settings from the admin panel and extensive functionality.
 
-Также, как и на некоторых предыдущих сайтах, имплантированы готовые решения календарей на Javascript.
+Also, as on some previous sites, ready-made calendar solutions in Javascript are implanted.
