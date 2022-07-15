@@ -1,0 +1,86 @@
+.xdsoft_timepicker.active {
+    display: block;
+    width: 350px;
+}
+
+section.pt-5.pb-5.mt-0.align-items-center.d-flex.bg-dark.cover.my-height {
+    height: 90vh;
+}
+
+/* Зависит от размера изображения */
+@media screen and (max-width: 640px) {
+    img.background {
+        left: 50%;
+        margin-left: -320px;
+
+    }
+
+    section.pt-5.pb-5.mt-0.align-items-center.d-flex.bg-dark.cover.my-height {
+        height: 70vh;
+    }
+
+    .sto {
+        max-width: 100%;
+    }
+
+    .fro {
+        font-size: 50px;
+    }
+
+    .xdsoft_timepicker.active {
+        width: 100px;
+    }
+
+}
+
+.pt-4, .py-4 {
+    padding-top: 0rem !important;
+}
+
+.shadow-sm {
+    height: 45px;
+}
+
+.thumb {
+    height: 75px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+}
+
+
+.col-12.col-md-8.h-50 {
+    background: rgba(0, 0, 0, .3);
+}
+
+.file img {
+    max-width: 200px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.files img {
+    max-width: 200px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.preloader-img {
+    display: none;
+}
+
+.btn {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.card {
+    padding: 10px;
+    margin: 5px;
+
+}
+
+.block_bg .btn-outline-primary {
+    color: white;
+    border-color: white;
+}
+

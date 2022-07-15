@@ -1,0 +1,41 @@
+.col-1-2 {
+    width: 50%;
+    text-align: -webkit-center;
+}
+
+.floatleft {
+    width: 100%;
+    margin-top: 50px;
+    float: left;
+    text-align: left;
+    font-size: 20px;
+}
+
+.float-center {
+    margin-top: 30px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.xdsoft_timepicker.active {
+    display: block;
+    width: 350px;
+}
+
+.air-datepicker.-inline- {
+    width: 100%;
+}
+
+input#el {
+
+    margin-bottom: 15px;
+}
+
+.text-calendar {
+    font-size: 19px;
+}
+
+.border_none {
+    display: none;
+}
+
