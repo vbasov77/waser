@@ -5,6 +5,14 @@
         <div class="container px-4 px-lg-5">
             <div class="gx-4 gx-lg-5 justify-content-center">
                 <h1>{{$date}}</h1>
+                @if(!empty($obj_id))
+                    <div class="card-footer text-muted" style="margin: 5px">
+                        <button class="btn btn-success" style="color: white; "
+                                onclick="window.location.href = '/admin_book/obj_id{{$obj_id}}';">
+                            Добавить заказ
+                        </button>
+                    </div>
+                @endif
                 <h3 style="margin-top: 40px">Забронированное время</h3><br>
                 @if(!empty($data))
                     @for($i = 0; $i < count($data); $i++)

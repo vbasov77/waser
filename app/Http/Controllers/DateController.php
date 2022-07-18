@@ -10,21 +10,27 @@ class DateController extends Controller
 {
     public static function inOrder(string $date, string $obj_id)
     {
-        $result = Booking::where('date_book', $date)->where('obj_id', $obj_id)->get();
-        if (!empty($result)) {
-            for ($i = 0; $i < count($result); $i++) {
-                $time = explode(";", $result[$i]->time_book);
-                $array_time[] = strtotime($time [0]);
+
+        $result = DB::table('booking')->where('date_book', $date)->where('obj_id', $obj_id)->get();
+        $res = json_decode(json_encode($result), true);
+
+        if (!empty($res)) {
+            for ($i = 0; $i < count($res); $i++) {
+                $time = explode(";", $res [$i]['time_book']);
+
+                $arr[] = strtotime($time [0]);
             }
-            sort($array_time);
-            foreach ($array_time as $item) {
-                $array = (string)date('H:i', $item);
-                $book[] = Booking::where('time_wash', $array)->where('date_book', $date)->get();
+
+            sort($arr);
+            foreach ($arr as $item) {
+                $ar = (string)date('H:i', $item);
+                $r = DB::table('booking')->where('time_wash', $ar)->where('date_book', $date)->get();
+                $arri [] = json_decode(json_encode($r), true);
             }
         } else {
-            $book = "";
+            $arri = "";
         }
-        return $book;
+        return $arri;
     }
 
     public static function GetTypeCar(int $obj_id)

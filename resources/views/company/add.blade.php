@@ -49,8 +49,6 @@
                                    autocomplete="off"
                                    value="{{ $_POST['load_obj'] ?? '' }}" required><br>
                         </div>
-
-
                         <br>
                         <input class="btn btn-outline-primary" type="submit" value="Продолжить">
                     </form>

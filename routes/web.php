@@ -63,6 +63,9 @@ Route::post('/add_more', 'MoreObjController@add')->middleware('role: company, ad
 Route::get('/upload/more_id{id}', 'MoreObjController@moreUpload')->middleware('role: company, admin');
 Route::post('/upload_more', 'MoreObjController@upload')->middleware('role: company, admin');
 
+Route::get('/admin_book/obj_id{id}', 'AdminBookController@viewAdd')->middleware('role: company, admin');
+Route::post('/admin_book', 'AdminBookController@add')->middleware('role: company, admin');
+
 Route::post('/get_date', 'OrdersController@view')->middleware('role: company, admin');
 Route::post('/in_archive', 'OrdersController@inArchive')->middleware('role: company, admin');
 Route::get('/get_date', 'OrdersController@view')->middleware('role: company, admin');

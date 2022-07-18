@@ -21,8 +21,8 @@ class OrdersController extends Controller
     public function today(int $id)
     {
         $today = date('d.m.Y');
-        $array = DateController::inOrder($today, $id);
-        return view('orders/orders')->with(['data' => $array, 'date' => $today]);
+        $array = DateController::inOrder($today, (string)$id);
+        return view('orders/orders')->with(['data' => $array, 'date' => $today, 'obj_id' => $id]);
     }
 
     public function viewCal(int $id)
@@ -32,13 +32,20 @@ class OrdersController extends Controller
 
     public function view()
     {
+        $today = date('d.m.Y');
         if (Auth::check()) {
             if (!empty($_GET)) {
                 $_POST['date'] = $_GET ['data'];
                 $_POST['obj_id'] = $_GET['obj_id'];
+
             }
             $array = DateController::inOrder($_POST['date'], $_POST['obj_id']); //Формируем даты по порядку
-            return view('orders/orders')->with(['data' => $array, 'date' => $_POST['date']]);
+            if (strtotime($today) == strtotime($_POST['date'])) {
+                $obj_id = $_POST ['obj_id'];
+            } else {
+                $obj_id = null;
+            }
+            return view('orders/orders')->with(['data' => $array, 'date' => $_POST['date'], 'obj_id' => $obj_id]);
         } else {
             return redirect()->route('login');
         }

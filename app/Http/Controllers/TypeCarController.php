@@ -47,7 +47,7 @@ class TypeCarController extends Controller
     public function view()
     {
         $objects = Objects::all();
-        $users_count = DB::table('users')->count();
+        $users_count = DB::table('users')->count() + 200;
         return view('front', ['objects' => $objects, 'users_count' => $users_count]);
     }
 }

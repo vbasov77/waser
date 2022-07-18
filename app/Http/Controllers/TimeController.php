@@ -16,6 +16,7 @@ class TimeController extends Controller
         ) {
             $slots[] = date("H:i", $i);
         }
+
         return $slots;
     }
 
@@ -52,6 +53,7 @@ class TimeController extends Controller
             $time_minus = gmdate('H:i', $diff);// До времени, которое нельзя занимать
             $more_closed[] = TimeController::SlicerTime($time_minus, $time_one, $slot_step);
         }
+        self::GetTimeArray($time_closed, $working_day_table);
         $time_pred = [];
         for ($ii = 0; $ii < count($more_closed); $ii++) {
             unset($more_closed[$ii][0]);

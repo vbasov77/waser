@@ -94,6 +94,7 @@ class CalendarController extends Controller
         $sum = $sum + $sum_cost_more;
         $time_client = $time_client + $sum_time_more;
         $time_cl = DbController::GetTime($_POST ['el'], $_POST['obj_id']);
+
         $time_closed = [];
         foreach ($time_cl as $item) {
             $array_time = explode(";", $item);
@@ -101,10 +102,13 @@ class CalendarController extends Controller
                 $time_closed [] = $a;
             }
         }
+
         $time_closed = array_keys(array_filter(array_count_values($time_closed), function ($v) {
             $loadObj = Objects::where('id', $_POST['obj_id'])->value('load_obj');
             return $v >= (int)$loadObj;
         }));
+
+
         if (Auth::check()) {
             $profile_db = Profile::where('user_id', Auth::id())->get();
             if (empty($profile_db)) {

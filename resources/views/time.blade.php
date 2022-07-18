@@ -1,18 +1,13 @@
 @extends('layouts.app')
 @section('content')
-
-
     <style>
         .ur {
-
             -webkit-user-select: none;
         }
 
         .border_none input[type="text"] {
             border: none;
         }
-
-
     </style>
 
     <section class="about-section text-center">
@@ -22,7 +17,6 @@
                     @if(!empty($error))
                         <div style="background-color:  red; text-align: center; color: white; padding: 15px">{{ $error }}</div>
                     @endif
-
                     <form action="/booking" class="form js-form-validate" method="post">
                         @csrf
                         <input type="hidden" name="obj_id" value="{{$obj_id ?? ''}}">

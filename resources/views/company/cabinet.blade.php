@@ -21,6 +21,13 @@
                                 <h3><?= $item ['name_obj']?></h3>
                             </div>
 
+                            <div class="card-footer text-muted" style="margin: 5px">
+                                <button class="btn btn-success" style="color: white; "
+                                        onclick="window.location.href = '/admin_book/obj_id{{$item['id']}}';">
+                                    Добавить заказ
+                                </button>
+                            </div>
+
                             <div class="card-body">
 
                                 Адрес: {{$item ['address_obj']}} <br>
