@@ -26,12 +26,12 @@
                                 <div class="floatleft">
                                     @php $i = 0
                                     @endphp
-                                    <h5>Тип авто</h5>
+                                    <h5>Тип авто<b style="color: red">*</b></h5>
                                     @foreach($auto as $item)
                                         <div class="custom-control custom-radio">
                                             <input type="radio" class="custom-control-input" id="initial{{$i}}"
                                                    name="class_auto"
-                                                   value="{{$item}}"/>
+                                                   value="{{$item}}" required/>
                                             <label for="initial{{$i}}" class="custom-control-label">{{$item}}</label><br>
                                         </div>
                                         @php $i++
@@ -40,12 +40,12 @@
                                     <br>
                                     @php $l = 0
                                     @endphp
-                                    <h5>Тип мойки</h5>
+                                    <h5>Тип мойки<b style="color: red">*</b></h5>
                                     @foreach($wash as $val)
                                         <div class="custom-control custom-radio">
                                             <input type="radio" name="class_wash" class="custom-control-input"
                                                    id="ini{{$l}}"
-                                                   value="{{$val}}"/>
+                                                   value="{{$val}}" required/>
                                             <label for="ini{{$l}}"
                                                    class="custom-control-label"> {{$val}}</label><br>
                                         </div>
