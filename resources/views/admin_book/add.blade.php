@@ -76,7 +76,7 @@
                         <div>
                             <label for="total_cost">Сумма</label>
                             <input type="number" autocomplete="off" name="total_cost"
-                                   placeholder="Сумма"  class="form-control" value="{{ $_POST ['total_cost'] ?? "" }}">
+                                   placeholder="Сумма"  class="form-control" value="{{ $_POST ['total_cost'] ?? "" }}" >
                         </div>
                         <br>
                         <b style="color: red">* - <small>обязательно для заполнения</small></b>
