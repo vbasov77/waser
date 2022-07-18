@@ -57,26 +57,26 @@
                         <div>
                             <label for="name_user">ФИО</label>
                             <input type="text" autocomplete="off" name="name_user"
-                                   placeholder="ФИО"  class="form-control" value="{{ $_POST ['name_user'] ?? "" }}" required>
+                                   placeholder="ФИО"  class="form-control" value="{{ $_POST ['name_user'] ?? "" }}">
                         </div>
                         <br>
                         <div>
                             <label for="user_email">Email</label>
                             <input type="email" autocomplete="off" name="user_email"
-                                   placeholder="Email"  class="form-control" value="{{ $_POST ['user_email'] ?? "" }}" required>
+                                   placeholder="Email"  class="form-control" value="{{ $_POST ['user_email'] ?? "" }}">
                         </div>
                         <br>
                         <div>
                             <label for="phone_user">Телефон</label>
                             <input  autocomplete="off" name="phone_user"
-                                   placeholder="Телефон"  class="form-control tel" value="{{ $_POST ['phone_user'] ?? "" }}" required>
+                                   placeholder="Телефон"  class="form-control tel" value="{{ $_POST ['phone_user'] ?? "" }}">
                         </div>
                         <br>
 
                         <div>
                             <label for="total_cost">Сумма</label>
                             <input type="number" autocomplete="off" name="total_cost"
-                                   placeholder="Сумма"  class="form-control" value="{{ $_POST ['total_cost'] ?? "" }}" required>
+                                   placeholder="Сумма"  class="form-control" value="{{ $_POST ['total_cost'] ?? "" }}">
                         </div>
                         <br>
                         <b style="color: red">* - <small>обязательно для заполнения</small></b>
