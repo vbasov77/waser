@@ -64,7 +64,7 @@
                                     @endforeach
                                 @endif
                                 <button class="btn btn-outline-success btn-sm"
-                                        onclick="window.location.href = '{{route('view_wash', ['id', $item->id])}}'">
+                                        onclick="window.location.href = '{{route('view_wash', ['id'=> $item['id']])}}'">
                                     Изменить виды
                                 </button>
                                 <br>

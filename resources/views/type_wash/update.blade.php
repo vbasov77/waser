@@ -9,7 +9,7 @@
                     <form action="{{route('update_wash')}}" method="post">
                         @csrf
                         <h3>Виды мойки</h3>
-                        <input type="hidden" name="obj_id" value="{{$obj_id}}">
+                        <input type="hidden" name="obj_id" value="{{(int)$obj_id}}">
 
 
                         @for($i = 0; $i < 5; $i++)
