@@ -69,18 +69,15 @@
                                 </button>
                                 <br>
                                 <b>Дополнительно:</b><br>
-                                <?php
-                                $result = \Illuminate\Support\Facades\DB::table('more_obj')->where('obj_id', $item->id)->get();
-                                $more = json_decode(json_encode($result), true);
-
-                                ?>
+                                @php
+                                $more = \Illuminate\Support\Facades\DB::table('more_obj')->where('obj_id', $item->id)->get();
+                                @endphp
                                 @if (!empty(count($more)))
                                     @foreach($more as $obj)
-                                        {{$obj['name_more'] . " " . $obj['cost_more'] . " руб +" . $obj['time_more'] . " мин"}}
+                                        {{$obj->name_more . " " . $obj->cost_more . " руб +" . $obj->time_more . " мин"}}
                                         <br>
                                     @endforeach
                                 @endif
-
                                 <button class="btn btn-outline-success btn-sm"
                                         onclick="window.location.href = '{{route('view_more', ['id'=>$item->id])}}';">
                                     Изменить доп
