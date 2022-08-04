@@ -15,6 +15,7 @@ class AdminBookController extends Controller
 {
     public function viewAdd(int $id)
     {
+
         $today = date('d.m.Y');
         $work = explode('-', Objects::where('id', $id)->value('working_hours'));//Получили время работы из BD
         $slot_start = $work[0]; // Время начала рабочего дня

@@ -8,7 +8,7 @@
                     <div class="block_bg">
                         <h1 style="color: white; font-family: Century Gothic;" class="display-2  mb-2 mt-5 fro">
                             Мойка на Салова</h1>
-                        <form action="/set" method="post">
+                        <form action="{{route('set')}}" method="post">
                             <h3 style="color: white">Выберете категорию</h3>
                             @csrf
                             <input type="radio" id="initial" name="class_auto" value="1" required/><span

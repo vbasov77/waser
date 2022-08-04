@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
     <section class="pt-5 pb-5 mt-0 align-items-center d-flex bg-dark cover my-height"
              style="margin-bottom: 45px; background-size: cover; background-position: center; background-image: url({{ url("img/bg_image/car2.jpg")}});">
         <div class="container-fluid">
@@ -24,6 +24,7 @@
         <div id="map" style="width: 100%; height: 400px"></div>
     </section>
     @push('scripts')
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
         <script>
             // Функция ymaps.ready() будет вызвана, когда
             // загрузятся все компоненты API, а также когда будет готово DOM-дерево.

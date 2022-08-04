@@ -8,7 +8,7 @@
                 @if(!empty($obj_id))
                     <div class="card-footer text-muted" style="margin: 5px">
                         <button class="btn btn-success" style="color: white; "
-                                onclick="window.location.href = '/admin_book/obj_id{{$obj_id}}';">
+                                onclick="window.location.href = '{{route('view_admin_book', ['id'=>$obj_id])}}';">
                             Добавить заказ
                         </button>
                     </div>
@@ -16,35 +16,35 @@
                 <h3 style="margin-top: 40px">Забронированное время</h3><br>
                 @if(!empty($data))
                     @for($i = 0; $i < count($data); $i++)
-                        <?php
-                        $phone = preg_replace("/[^0-9]/", '', $data [$i][0] ['phone_user']);
-                        $auto = \Illuminate\Support\Facades\DB::table('profile')->where('phone_user', $data [$i][0] ['phone_user'])->value('auto_user');
+                        @php
+                            $phone = preg_replace("/[^0-9]/", '', $data [$i][0] ['phone_user']);
+                            $auto = \Illuminate\Support\Facades\DB::table('profile')->where('phone_user', $data [$i][0] ['phone_user'])->value('auto_user');
+                        @endphp
 
-                        ?>
                         <div class="card text-center" style="margin: 15px">
                             <div class="card-header">
-                                Номер заказа: {{$data [$i][0] ['id'] }}<br>
-                                {{$data[$i][0] ['date_book']}}
-                                <h3>{{$data [$i][0] ['time_wash']}}</h3><br>
+                                Номер заказа: {{$data [$i][0] -> id }}<br>
+                                {{$data[$i][0]->date_book}}
+                                <h3>{{$data [$i][0]->time_wash}}</h3><br>
                             </div>
                             <div class="card-body">
-                                <h5>{{$data [$i][0] ['total_cost']}} руб</h5><br>
+                                <h5>{{$data [$i][0]->total_cost}} руб</h5><br>
                                 Тип авто: <?= $data [$i][0] ['type_auto'] ?><br>
                                 Тип мойки: <?= $data [$i][0] ['type_wash'] ?><br>
                                 <a href='tel:+{{ $phone }}'> {{$data [$i][0]['phone_user'] }}</a>
                                 {{$data [$i][0] ['name_user'] }}<br>
-                                <b><?= $auto ?></b><br>
+                                <b>{{$aut}}</b><br>
 
 
                                 @if(!empty($data [$i][0]['more_book']))
                                     <b>Дополнительно:</b><br>
-                                    <?php
+                                    @php
                                     $more_book = explode(";", $data [$i][0]['more_book'])
-                                    ?>
+                                    @endphp
                                     @foreach($more_book as $book)
-                                        <?php
+                                        @php
                                         $more = explode(',', $book);
-                                        ?>
+                                        @endphp
                                         {{$more[2] . " " . $more [3] . " руб " . $more [4] . " мин"}}<br>
                                     @endforeach
                                 @endif
@@ -59,11 +59,11 @@
 
                                 <a onClick="return confirm('Подтвердите удаление!')"
                                    class="btn btn-danger btn-sm" style="color: white; "
-                                   href='/delete/<?= $data[$i][0]['id'] . ';' . $date . ';' . $data[$i][0]['obj_id'] ?>/order'>
+                                   href='{{route('delete.order', ['id'=> $data[$i][0]['id'] . ';' . $date . ';' . $data[$i][0]['obj_id']])}}' ?>/order'>
                                     Удалить
                                 </a>
 
-                                <form action="/in_archive" method="post">
+                                <form action="{{route('in.archive')}}" method="post">
                                     @csrf
                                     <input type="hidden" name="id" value="{{$data[$i][0]['id']}}"/>
                                     <input type="hidden" name="obj_id" value="{{$data[$i][0]['obj_id']}}"/>

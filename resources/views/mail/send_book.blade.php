@@ -1,5 +1,5 @@
 
-Здравствуйте, <?= $send_mail ['name_user']?>!<br>
+Здравствуйте, {{ $send_mail ['name_user']}}!<br>
 <br>
 Вы записались на мойку автомобиля по адресу:<br>
 {{$send_mail ['address']}}<br>

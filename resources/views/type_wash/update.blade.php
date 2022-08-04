@@ -6,7 +6,7 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8">
 
-                    <form action="/update_wash" method="post">
+                    <form action="{{route('update_wash')}}" method="post">
                         @csrf
                         <h3>Виды мойки</h3>
                         <input type="hidden" name="obj_id" value="{{$obj_id}}">
@@ -22,7 +22,7 @@
                         <input class="btn btn-outline-primary" type="submit" value="Сохранить">
                     </form>
                     <button class="btn btn-primary btn-sm" style="color: white; "
-                            onclick="window.location.href = '/cabinet';">
+                            onclick="window.location.href = '{{route('cabinet')}}';">
                         Назад
                     </button>
                 </div>

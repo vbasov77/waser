@@ -10,7 +10,7 @@
                     {{$message}}
                     <br>
                     <br>
-                    <form action="/get_time" method="post">
+                    <form action="{{route('get_time')}}" method="post">
                         @csrf
                         <input type="hidden" name="obj_id" value="{{$obj_id ?? ''}}">
                         <input type="hidden" name="car" value="{{$car ?? ''}}">

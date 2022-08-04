@@ -1,20 +1,21 @@
 @extends('layouts.app')
 @section('content')
 
-    <?php if (!empty($error)): ?>
-    <div style="background-color: red; color:#ffffff; padding: 5px;margin: 15px">
-        <center> <?= $error ?></center>
-    </div>
-    <?php endif; ?>
-    <?php if (!empty($message)): ?>
-    <div style="background-color: #43b143; color:#ffffff; padding: 5px;margin: 15px">
-        <center> <?= $message ?></center>
-    </div>
-    <?php endif; ?>
+    @if (!empty($error))
+        <div style="background-color: red; color:#ffffff; padding: 5px;margin: 15px">
+            <center>{{$error}}</center>
+        </div>
+    @endif
+
+    @if (!empty($message))
+        <div style="background-color: #43b143; color:#ffffff; padding: 5px;margin: 15px">
+            <center> {{$message}}</center>
+        </div>
+    @endif
 
     <section class="about-section text-center">
         <div class="container px-4 px-lg-5">
-            <form action="/search_phone" class="form js-form-validate" method="post">
+            <form action="{{route('search.phone')}}" class="form js-form-validate" method="post">
                 @csrf
                 <div>
                     <label for="date"><b>Телефон:</b></label><br>

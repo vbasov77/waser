@@ -9,15 +9,15 @@
                     @for($i = 0; $i < count($objects); $i++)
                         <div class="card text-center" style="margin: 15px">
                             <div class="card-header">
-                                {{$objects[$i]['name_obj']}}
+                                {{$objects[$i]->name_obj}}
                             </div>
                             <div class="card-body">
                                 <button class="btn btn-success btn-sm" style="color: white; "
-                                        onclick="window.location.href = 'object/{{$objects[$i]['id'] }}/today';">
+                                        onclick="window.location.href = '{{route('object.today', ['id'=>$objects[$i]->id])}}';">
                                     Сегодня
                                 </button>
-                                <button class="btn btn-primary btn-sm" style="color: white; "
-                                        onclick="window.location.href = 'object/{{$objects[$i]['id'] }}/cal';">
+                                <button class="btn btn-primary btn-sm" style="color: white;"
+                                        onclick="window.location.href = '{{route('object.cal', ['id'=>$objects[$i]->id])}}';">
                                     Календарь
                                 </button>
                             </div>

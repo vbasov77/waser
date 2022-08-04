@@ -13,7 +13,7 @@
                     <h2>Услуги</h2>
                     <div class="card-footer text-muted" style="margin: 5px">
                         <button class="btn btn-success" style="color: white; "
-                                onclick="window.location.href = '/add_more/obj_id{{(int) $obj_id}}';">
+                                onclick="window.location.href = '{{route('add_more', ['id'=>(int) $obj_id])}}';">
                             Добавить услугу
                         </button>
                     </div>
@@ -21,17 +21,17 @@
 
                         <div class="card text-center">
                             <div class="card-header">
-                                <h3>{{$more['name_more']}}</h3>
+                                <h3>{{$more->name_more}}</h3>
                             </div>
 
                             <div class="card-body">
-                                Порядковый номер: {{ $more['number_more']}}<br>
-                                Описание: {{ $more ['descriptions_more']}}<br>
-                                Цена: {{ $more['cost_more']}}<br>
-                                Время: {{ $more['time_more']}}<br>
+                                Порядковый номер: {{ $more->number_more}}<br>
+                                Описание: {{ $more->descriptions_more}}<br>
+                                Цена: {{ $more->cost_more}}<br>
+                                Время: {{ $more->time_more}}<br>
 
-                                @if(!empty($more['category']))
-                                    <i>{{$more['category']}}</i>
+                                @if(!empty($more->category))
+                                    <i>{{$more->category}}</i>
                                 @else
                                     <div style="color: red; font-size: small;">
                                         !!! не заданы категории
@@ -42,12 +42,12 @@
 
                             <div class="card-footer text-muted">
                                 <button class="btn btn-outline-primary btn-sm"
-                                        onclick="window.location.href = '/upload/more_id{{$more ['id']}}&{{(int) $obj_id}}';">
+                                        onclick="window.location.href = '{{route('upload.more', ['id' => $more->id . "&" . (int) $obj_id])}}';">
                                     Редактировать
                                 </button>
 
                                 <a onClick="return confirm('Подтвердите удаление!')"
-                                   href='/delete/more_id{{$more['id'] . ";" . $more['obj_id']}}' type='button'
+                                   href='{{route('upload_more', ['id' => $more->id . ";" . $more->obj_id])}}' type='button'
                                    class='btn btn-outline-danger btn-sm'>Удалить</a>
                             </div>
                         </div>

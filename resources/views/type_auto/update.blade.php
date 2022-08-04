@@ -4,7 +4,7 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8">
-                    <form action="/update_auto" method="post">
+                    <form action="{{route('update_auto')}}" method="post">
                         @csrf
                         <h3>Виды авто</h3>
                         <input type="hidden" name="obj_id" value="{{$obj_id}}">

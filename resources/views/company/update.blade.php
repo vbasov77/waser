@@ -6,7 +6,7 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8">
 
-                    <form action="/update_object" method="post">
+                    <form action="{{route('update.object')}}" method="post">
                         <input type="hidden" name="id" value="{{ $object['id']}}">
                         @csrf
                         <h3>Новый объект</h3>
@@ -23,7 +23,7 @@
                         <label for="phone_obj"><b>Телефон</b></label><br>
                         <div>
                             <input type="phone" name="phone_obj" class="tel form-control"
-                                   value="{{ $object['phone_obj'] ?? '' }}" required><br>
+                                   value="{{$object['phone_obj'] ?? '' }}" required><br>
                         </div>
 
 

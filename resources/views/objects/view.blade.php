@@ -16,7 +16,7 @@
                             @csrf
                             @php $i = 0
                             @endphp
-                            <input type="hidden" name="obj_id" value="{{$data['id']}}">
+                            <input type="hidden" name="obj_id" value="{{$data->id}}">
                             @foreach($auto as $item)
                                 <div class="custom-control custom-radio">
                                     <input type="radio" class="custom-control-input" id="initial{{$i}}" name="class_auto" value="{{$item}}" required/>
@@ -41,11 +41,12 @@
             <div class="col-lg">
                 <div style="margin-bottom: 40px" class="d-flex h-100">
                     <div class="project-text w-100 my-auto text-center">
-                        <?php
-                        $phone = preg_replace("/[^0-9]/", '', $data['phone_obj']);?>
-                        {{$data['address_obj']}}<br>
+                        @php
+                        $phone = preg_replace("/[^0-9]/", '', $data['phone_obj']);
+                        @endphp
+                        {{$data->address_obj}}<br>
                         Тел: <a href='tel:+{{$phone}}'> {{$data['phone_obj']}}</a><br>
-                        Время работы: {{$data['working_hours']}}
+                        Время работы: {{$data->working_hours}}
                         <br>
                     </div>
                 </div>
@@ -55,6 +56,7 @@
                 <section>
                     <div id="map" style="width: 100%; height: 400px"></div>
                 </section>
+
                 <script>
 
                     // Функция ymaps.ready() будет вызвана, когда
@@ -98,9 +100,9 @@
                         // Добавление метки
                         // https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Placemark-docpage/
 
-                            <?php
+                            @php
                             $phone = preg_replace("/[^0-9]/", '', $data['phone_obj']);
-                            ?>
+                            @endphp
                         var myPlacemark = new ymaps.Placemark([{{$data['coordinates']}}], {
                                 // Хинт показывается при наведении мышкой на иконку метки.
                                 hintContent: '{{$data['address_obj']}}',

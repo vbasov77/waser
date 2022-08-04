@@ -5,7 +5,7 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8">
-                    <form action="/update_cost" method="post">
+                    <form action="{{route('update_cost')}}" method="post">
                         @csrf
                         <h3>Таблица цен</h3>
                         <input type="hidden" name="obj_id" value="{{$obj_id}}">

@@ -4,7 +4,7 @@
         <div class="container px-4 px-lg-5">
             <div class="gx-4 gx-lg-5 justify-content-center">
                 @if(!empty($profile && $user))
-                    <form action="/user_phone" class="form js-form-validate" method="post">
+                    <form action="{{route('user.phone')}}" class="form js-form-validate" method="post">
                         @csrf
                         <div>
                             <label for="id"><b>ID:</b></label><br>

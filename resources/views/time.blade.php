@@ -17,7 +17,7 @@
                     @if(!empty($error))
                         <div style="background-color:  red; text-align: center; color: white; padding: 15px">{{ $error }}</div>
                     @endif
-                    <form action="/booking" class="form js-form-validate" method="post">
+                    <form action="{{route('booking')}}" class="form js-form-validate" method="post">
                         @csrf
                         <input type="hidden" name="obj_id" value="{{$obj_id ?? ''}}">
                         <input type="hidden" name="time_client" value="{{$time_client}}">

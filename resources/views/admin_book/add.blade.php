@@ -4,7 +4,7 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8">
-                    <form action="/admin_book" method="post">
+                    <form action="{{route('admin_book')}}" method="post">
                         @csrf
                         <input style="float: left" name="obj_id" type="hidden" value="{{$obj_id}}">
                         <br>

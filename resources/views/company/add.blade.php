@@ -6,7 +6,7 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8">
                     <time-component></time-component>
-                    <form action="/add_object" method="post">
+                    <form action="{{route('add_object')}}" method="post">
                         @csrf
                         <h3>Новый объект</h3>
                         <label for="name_obj"><b>Название</b></label><br>

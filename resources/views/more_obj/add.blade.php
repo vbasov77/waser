@@ -5,8 +5,7 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8">
-                    <time-component></time-component>
-                    <form action="/add_more" method="post">
+                    <form action="{{route('add_more')}}" method="post">
                         @csrf
                         <input type="hidden" name="obj_id" value="{{$obj_id}}">
 

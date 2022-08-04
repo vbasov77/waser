@@ -3,7 +3,7 @@
 
     <div class="container mt-5 mb-5" style="width: 400px">
 
-        <form action="/upd_class" method="post">
+        <form action="{{route('upd_class')}}" method="post">
             @csrf
             <div>
                 <h3>Редактировать класс авто, время мойки, цену.</h3>

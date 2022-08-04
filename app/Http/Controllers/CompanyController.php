@@ -17,7 +17,7 @@ class CompanyController extends Controller
     public function cabinet()
     {
         $objects = Objects::where('company_id', Auth::id())->get();
-        return view('company/cabinet', ['objects' => $objects]);
+        return view('company.cabinet', ['objects' => $objects]);
     }
 
 

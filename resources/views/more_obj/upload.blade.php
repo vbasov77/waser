@@ -5,28 +5,28 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8">
-                    <form action="/upload_more" method="post">
+                    <form action="{{route('upload_more')}}" method="post">
                         @csrf
-                        <input type="hidden" name="id" value="{{$more_obj['id']}}">
-                        <input type="hidden" name="obj_id" value="{{$more_obj['obj_id']}}">
+                        <input type="hidden" name="id" value="{{$more_obj->id}}">
+                        <input type="hidden" name="obj_id" value="{{$more_obj->obj_id}}">
                         <h3>Редактировать услугу</h3>
                         <label for="name_more"><b>Название</b></label><br>
                         <input type="text" class="form-control" name="name_more"
-                               value="{{ $more_obj['name_more'] ?? '' }}"
+                               value="{{ $more_obj->name_more ?? '' }}"
                                required><br>
                         <br>
 
                         <label for="descriptions_more"><b>Описание</b></label><br>
                         <div>
                             <input type="text" name="descriptions_more" class="form-control"
-                                   value="{{ $more_obj['descriptions_more'] ?? ''}}" required><br>
+                                   value="{{ $more_obj->descriptions_more ?? ''}}" required><br>
                         </div>
 
                         <br>
                         <label for="cost_more"><b>Цена</b></label><br>
                         <div>
                             <input type="number" name="cost_more" class="form-control"
-                                   value="{{ $more_obj['cost_more'] ?? '' }}" required><br>
+                                   value="{{ $more_obj->cost_more ?? '' }}" required><br>
                         </div>
                         <br>
 
@@ -34,14 +34,14 @@
                         <div>
                             <input type="number" name="time_more" class="form-control"
                                    autocomplete="off"
-                                   value="{{ $more_obj['time_more'] ?? '' }}" required><br>
+                                   value="{{ $more_obj->time_more ?? '' }}" required><br>
                         </div>
                         <br>
                         <div>
                             <label for="number_more"><b>Номер в списке</b></label><br>
                             <input type="number" name="number_more" class="form-control"
                                    autocomplete="off"
-                                   value="{{ $more_obj['number_more'] ?? '' }}" required><br>
+                                   value="{{ $more_obj->number_more ?? '' }}" required><br>
                         </div>
 
                         <div>

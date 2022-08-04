@@ -23,7 +23,7 @@
                         </div>
                     @else
                     @endif
-                    <form action="/add_profile" method="post">
+                    <form action="{{route('add_profile')}}" method="post">
                         @csrf
                         <label for="phone_user"><b>Телефон:</b></label><br>
                         <input name="phone_user" id="name" value="{{ $data['phone_user'] ?? '' }}"
