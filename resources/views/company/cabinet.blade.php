@@ -18,7 +18,7 @@
 
                         <div class="card text-center" style="margin-top: 25px">
                             <div class="card-header">
-                                <h3><?= $item ['name_obj']?></h3>
+                                <h3>{{$item ['name_obj']}}</h3>
                             </div>
 
                             <div class="card-footer text-muted" style="margin: 5px">
@@ -74,9 +74,9 @@
                                 $more = json_decode(json_encode($result), true);
 
                                 ?>
-                                @if (!empty($more))
+                                @if (!empty(count($more)))
                                     @foreach($more as $obj)
-                                        {{$obj->name_more . " " . $obj->cost_more . " руб +" . $obj->time_more . " мин"}}
+                                        {{$obj['name_more'] . " " . $obj['cost_more'] . " руб +" . $obj['time_more'] . " мин"}}
                                         <br>
                                     @endforeach
                                 @endif

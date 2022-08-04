@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -81,7 +83,6 @@ Route::get('/add_object', 'CompanyController@addView')->name('add_object')->midd
 
 Route::post('/add_object', 'ObjectController@addObject')->middleware('role: company, admin');
 Route::post('/update_object', 'ObjectController@updateObj')->name('update.object')->middleware('role: company, admin');
-
 
 Route::get('/clear', function () {
     Artisan::call('cache:clear');

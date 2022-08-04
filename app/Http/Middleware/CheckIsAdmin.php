@@ -19,6 +19,7 @@ class CheckIsAdmin
     {
         if(Auth::user()->isAdmin()){
             return $next($request);
+
         }
         return redirect('/');
 
